@@ -1,5 +1,6 @@
 // Dependencies
 const gql = require('graphql-tag')
+const {ApolloServer} = require('apollo-server');
 const PORT = process.env.PORT || 4000;
 /*
   Create a schema
@@ -27,7 +28,7 @@ const typeDefs = gql`
   Resolvers
   - has to look identical to the typeDef above
 */ 
-const resolver = {
+const resolvers= {
   Query: {
     me(){
       return {
