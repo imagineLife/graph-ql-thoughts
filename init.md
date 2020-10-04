@@ -43,3 +43,8 @@ Interpreted from scott moss...
   - shared queries + mutations
 
 ### How could this fit in with a current architecture?
+
+- setup a graphQL server
+  - connect it to 1 db
+- A GraphQL **Server as a layer** in front of many 3rd party services
+  - connects them all together with one GraphQL API
