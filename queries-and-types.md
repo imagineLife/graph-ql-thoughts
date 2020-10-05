@@ -10,7 +10,7 @@
 - returs values for fields that exist on Types in a SChema
 - dependant on an incoming query for execution
 - `resolver names must match exact field-names on the schema types`
-- ex.
+- ex...
 
 ```
   resolvers = {
@@ -41,3 +41,16 @@ const typeDefs = gql`
   }
 `
 ```
+
+- can be async... HMMM!
+- can retrieve data from any source
+
+## All Together
+
+`Schema + Resolvers => Resolver`  
+That's the heart of GraphQL.
+
+- Schema
+- TypeDefs
+- Resolvers...
+  - resolving, or satisfying, some data request from a 'client'
