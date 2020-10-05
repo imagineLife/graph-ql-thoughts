@@ -49,9 +49,14 @@ Interpreted from scott moss...
 - A GraphQL **Server as a layer** in front of many 3rd party services
   - connects them all together with one GraphQL API
 
-# Only 1 endpoint
+### Only 1 endpoint
 
 - usually `POST`
 - doesn't respect http
 - always a 200
 - everything is based off the response
+
+### Creating Notes
+
+- GraphQL Server Creates Nodes
+- Client request matches queryAPI resolver assumptions
