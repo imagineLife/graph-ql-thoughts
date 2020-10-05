@@ -47,3 +47,10 @@ const gqlServer = new ApolloServer({
 
 gqlServer.listen(PORT)
 .then(() => console.log(`GraphQL Server listening on ${PORT}`))
+
+/*
+  How to use
+  - from cmd line - `node index.js`
+  - from browser localhost:4000
+  - !! view the batteries-included graphql apollo gui
+*/ 
