@@ -8,7 +8,8 @@ module.exports = {
     pets(_,__, ctx, info){
     /* 
       here can set DEFAULT returns
-      
+      NOTE: toggling these requires server restart despite hot-reloading
+
       return arr of ids
       returns [{id:1}, {id: 2}] returns the arr  2 
       returning via graphQL Playground ->
