@@ -8,6 +8,8 @@ module.exports = {
     pets(_,__, ctx, info){
     /* 
       here can set DEFAULT returns
+      
+      return arr of ids
       returns [{id:1}, {id: 2}] returns the arr  2 
       returning via graphQL Playground ->
       {
@@ -15,8 +17,17 @@ module.exports = {
           id
         }
       }
+
+      return arr of ids + names
+      returns [{id:1, name: 'sally'}, {id: 2, name: 'john'}] returns the arr  2 
+      returning via graphQL Playground ->
+      {
+        pets {
+          id
+        }
+      
       */  
-    return [{id:1}, {id: 2}] 
+    return [{id:1, name: 'init'}, {id: 2, name: 'hank'}] 
     }
   },
   // Mutation: {
