@@ -6,7 +6,17 @@
 module.exports = {
   Query: {
     pets(_,__, ctx, info){
-     
+    /* 
+      here can set DEFAULT returns
+      returns [{id:1}, {id: 2}] returns the arr  2 
+      returning via graphQL Playground ->
+      {
+        pets {
+          id
+        }
+      }
+      */  
+    return [{id:1}, {id: 2}] 
     }
   },
   // Mutation: {
