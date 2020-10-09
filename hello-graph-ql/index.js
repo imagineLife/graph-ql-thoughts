@@ -58,7 +58,15 @@ const resolvers= {
           brand: 'Simple',
           size: 10
         }
-      ]
+      ].filter(d => {
+        if(input && input.brand){
+          return d.brand === input.brand
+        }
+        if(input && input.size){
+          return d.size === input.size
+        }
+        return d
+      })
     }
   }
 }
@@ -76,4 +84,29 @@ gqlServer.listen(PORT)
   - from cmd line - `node index.js`
   - from browser localhost:4000
   - !! view the batteries-included graphql apollo gui
+
+  Querying for shoes
+  from GraphQL Gui...
+  {
+    shoes {
+      size
+      brand
+    }
+  }
+
+  OR
+
+  {
+    shoes {
+      size
+    }
+  }
+
+  OR
+
+  {
+    shoes {
+      brand
+    }
+  }
 */ 
