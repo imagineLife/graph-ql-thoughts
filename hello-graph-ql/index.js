@@ -19,6 +19,11 @@ const typeDefs = gql`
     friends: [User]!
   }
 
+  type Shoes {
+    brand: String!
+    size: Int!
+  }
+
   type Query {
     me: User!
   }
