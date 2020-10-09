@@ -2,6 +2,49 @@
 const gql = require('graphql-tag')
 const {ApolloServer} = require('apollo-server');
 const PORT = process.env.PORT || 4000;
+const shoesArr = [
+  {
+    brand: 'Fancy',
+    size: 10
+  },
+  {
+    brand: 'Simple',
+    size: 10
+  },
+  {
+    brand: 'Workout',
+    size: 10
+  },
+  {
+    brand: 'Dance',
+    size: 10
+  }
+]
+
+const shirtsArr = [
+  {
+    brand: 'Simple',
+    size: 'S',
+    color: 'Dark Brown'
+  },
+  {
+    brand: 'Simple',
+    size: 'S',
+    color: 'Black'
+  },
+  {
+    brand: 'Simple',
+    size: 'S',
+    color: 'Dark Blue'
+  },
+  {
+    brand: 'Simple',
+    size: 'S',
+    color: 'Gray'
+  }
+]
+
+
 /*
   Create a schema
   Converts to an AST undertandable by graphql
@@ -19,6 +62,12 @@ const typeDefs = gql`
     friends: [User]!
   }
 
+  type Shirt{
+    brand: String!
+    size: String!
+    color: String!
+  }
+
   type Shoe {
     brand: String!
     size: Int!
@@ -32,6 +81,7 @@ const typeDefs = gql`
   type Query {
     me: User!
     shoes(input: ShoesInput): [Shoe]
+    shirts: [Shirt]
   }
 `
 
@@ -46,27 +96,21 @@ const resolvers= {
         email: 'test@yoda.com',
         avatar: 'http://myAvatar.png',
         friends: []
-      }
+      } 
     },
     shoes(_,{input}){
-      return [
-        {
-          brand: 'Fancy',
-          size: 10
-        },
-        {
-          brand: 'Simple',
-          size: 10
-        }
-      ].filter(d => {
-        if(input && input.brand){
-          return d.brand === input.brand
-        }
-        if(input && input.size){
-          return d.size === input.size
-        }
-        return d
-      })
+      return shoesArr.filter(d => {
+  if(input && input.brand){
+    return d.brand === input.brand
+  }
+  if(input && input.size){
+    return d.size === input.size
+  }
+  return d
+})
+    },
+    shirts(){
+      return shirtsArr
     }
   }
 }
