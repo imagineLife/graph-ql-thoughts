@@ -1,3 +1,7 @@
 - init
 - hello-graph-ql
 - queries-and-resolvers
+- petql
+  - initial, mock return vals, intro to resolvers
+- resolver-notes
+-
