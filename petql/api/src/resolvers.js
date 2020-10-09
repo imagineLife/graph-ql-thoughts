@@ -1,6 +1,12 @@
 /**
  * Here are your Resolvers for your Schema. They must match
  * the type definitions in your scheama
+ * 
+ * 
+ * MOST USEFUL for 'computed' api values,
+ * db-abstractions i.e
+ *  instead of 2 fields 'firstName', 'lastName'
+ *  the resolver can store the logic to return fullName as `${firstName} ${lastName}`
  */
 
 module.exports = {
