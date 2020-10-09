@@ -12,7 +12,7 @@
 module.exports = {
   Query: {
     // pets(_,__, ctx, info){
-      pets(_,{type}, ctx, info){
+      pets(_,{input}, ctx, info){
     /* 
       here can set DEFAULT returns
       NOTE: toggling these requires server restart despite hot-reloading
@@ -35,10 +35,19 @@ module.exports = {
         }
       
 
-        NOTE the {type} in the fn param
-        - type, here, is expected 
+        NOTE the {input} in the fn param
+        - input, here, is expected 
         - Has to match the schema def  
-        
+        - in schema def is...
+          input PetInput{
+            name: String
+            type: String
+          }
+
+          type Query {
+            pets(input: PetInput): [Pet]!
+          }
+
       */  
     return [{id:1, name: 'init'}, {id: 2, name: 'hank'}] 
     }
