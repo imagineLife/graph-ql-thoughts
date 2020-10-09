@@ -6,12 +6,13 @@
  * MOST USEFUL for 'computed' api values,
  * db-abstractions i.e
  *  instead of 2 fields 'firstName', 'lastName'
- *  the resolver can store the logic to return fullName as `${firstName} ${lastName}`
+ *  the resolver can store the logic to return fullName `${firstName} ${lastName}`
  */
 
 module.exports = {
   Query: {
-    pets(_,__, ctx, info){
+    // pets(_,__, ctx, info){
+      pets(_,{type}, ctx, info){
     /* 
       here can set DEFAULT returns
       NOTE: toggling these requires server restart despite hot-reloading
@@ -33,6 +34,11 @@ module.exports = {
           id
         }
       
+
+        NOTE the {type} in the fn param
+        - type, here, is expected 
+        - Has to match the schema def  
+        
       */  
     return [{id:1, name: 'init'}, {id: 2, name: 'hank'}] 
     }

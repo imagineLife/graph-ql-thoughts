@@ -17,8 +17,15 @@ const typeDefs = gql`
   }
 
   type Query {
-    pets: [Pet]!
+    pets(type: String!): [Pet]!
   }
 `;
 
+/*
+  pets query...
+    - query HAS to have a 'type' parameter
+    - HAS to have the type param as a string
+    - coordinates with the resolvers file
+
+*/ 
 module.exports = typeDefs
