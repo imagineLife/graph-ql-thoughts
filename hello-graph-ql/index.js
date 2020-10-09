@@ -47,6 +47,18 @@ const resolvers= {
         avatar: 'http://myAvatar.png',
         friends: []
       }
+    },
+    shoes(_,{input}){
+      return [
+        {
+          brand: 'Fancy',
+          size: 10
+        },
+        {
+          brand: 'Simple',
+          size: 10
+        }
+      ]
     }
   }
 }
