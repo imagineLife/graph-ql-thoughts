@@ -17,16 +17,20 @@ const typeDefs = gql`
     color: String!
   }
 
-  
   input PetInput{
     name: String
     type: String
     hair: String
   }
 
+  input PetByTypeInput{
+    petType: String!
+  }
+
   type Query {
     pets(input: PetInput): [Pet]!
     pet(input: PetInput): Pet
+    petsByType(input: PetByTypeInput): [Pet]
   }
 `;
 

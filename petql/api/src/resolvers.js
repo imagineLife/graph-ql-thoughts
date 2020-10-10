@@ -62,6 +62,9 @@ module.exports = {
     pet(_,{input},ctx){
       return myPets.filter(p => p.name === input.name)[0]
       // return ctx.models.Pet.findOne(input)
+    },
+    petsByType(_,{input:{petType}},ctx){
+      return myPets.filter(p => p.type === petType)
     }
   },
   // Mutation: {
