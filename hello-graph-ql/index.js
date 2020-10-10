@@ -100,14 +100,14 @@ const resolvers= {
     },
     shoes(_,{input}){
       return shoesArr.filter(d => {
-  if(input && input.brand){
-    return d.brand === input.brand
-  }
-  if(input && input.size){
-    return d.size === input.size
-  }
-  return d
-})
+        if(input && input.brand){
+          return d.brand === input.brand
+        }
+        if(input && input.size){
+          return d.size === input.size
+        }
+        return d
+      })
     },
     shirts(){
       return shirtsArr
@@ -129,10 +129,10 @@ gqlServer.listen(PORT)
   - from browser localhost:4000
   - !! view the batteries-included graphql apollo gui
 
-  Querying for shoes
+  Querying for shirts
   from GraphQL Gui...
   {
-    shoes {
+    shirts {
       size
       brand
     }
@@ -141,7 +141,7 @@ gqlServer.listen(PORT)
   OR
 
   {
-    shoes {
+    shirts {
       size
     }
   }
@@ -149,8 +149,17 @@ gqlServer.listen(PORT)
   OR
 
   {
-    shoes {
+    shirts {
       brand
+    }
+  }
+
+
+
+  Querying for shoes, leveraging the filter
+  {
+    shoes(input: {brand: "Simple"}){
+      size
     }
   }
 */ 
