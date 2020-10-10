@@ -1,3 +1,10 @@
+const myPets = [
+  {type: 'dog', name: 'ralph', hair: 'short', color: 'blue'},
+  {type: 'cat', name: 'sally', hair: 'long', color: 'orange'},
+  {type: 'dog', name: 'donnie', hair: 'long', color: 'green'},
+  {type: 'giraffe', name: 'shorty', hair: 'short', color: 'pink'},
+  {type: 'monkey', name: 'boy', hair: 'long', color: 'white'}
+]
 /**
  * Here are your Resolvers for your Schema. They must match
  * the type definitions in your scheama
@@ -8,6 +15,7 @@
  *  instead of 2 fields 'firstName', 'lastName'
  *  the resolver can store the logic to return fullName `${firstName} ${lastName}`
  */
+
 
 module.exports = {
   Query: {
@@ -50,6 +58,10 @@ module.exports = {
 
       */  
     return [{id:1, name: 'init'}, {id: 2, name: 'hank'}] 
+    },
+    pet(_,{input},ctx){
+      return myPets.filter(p => p.name === input.name)[0]
+      // return ctx.models.Pet.findOne(input)
     }
   },
   // Mutation: {
