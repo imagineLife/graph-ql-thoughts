@@ -1,5 +1,6 @@
 ## Queries, Types
 
+- the only thing required in a schema is a query
 - Expected to be present by GraphQL
 - outlies the shape to the resulting data for the GraphQL-consuming-client
 - the `!` means `not null`
