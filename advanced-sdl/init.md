@@ -3,6 +3,7 @@
 - [Enums](#enums)
 - [Interfaces](#interfaces)
 - [Unions](#unions)
+- [Relationships](#relationships)
 
 ## Enums
 
@@ -171,3 +172,21 @@ type Query {
   }
 }
 ```
+
+## Relationships
+
+- in DB there are no relationships
+- POWERFUL
+- DANGEROUS
+
+### Thinking In Graphs
+
+- The API is no longer...
+  - a 'predefined list of operations'
+  - always returning the same shape for each operation
+- INSTEAD, the API...
+  - is a set of "nodes"
+    - nodes that know how to resolve _themselves_
+    - linkable to other "nodes"
+  - allows clients to ask for "nodes"
+  - allows clients to "follow links" to get related "nodes"
