@@ -57,5 +57,44 @@ mutation {
 - "Abstract Types" that CAN NOT be used as field values
 - used as "foundations" for explicit types
   - i.e when types share common fields, bu differ slightly
+- interface types...
+  - describe common fields of other types
+  - do not "replace" redundancy - all types that 'implement' an 'interface' still need to explicitly state the fields that are in the interface (_see below for example_)
+
+### Trivial Example
+
+```js
+
+  // an enum
+  enum SleeveOptions {
+    SHORT
+    LONG
+  }
+
+  enum JacketWeight {
+    HEAVY
+    LIGHT
+    MIDWEIGHT
+  }
+
+  // the interface type
+  interface TopWear {
+    size: String!
+    material: String
+  }
+
+  type Shirt implements TopWear {
+    size: String!
+    material: String
+    sleeveLength: SleeveOptions
+  }
+
+  type Jacket implements TopWear {
+    size: String!
+    material: String
+    weight: JacketWeight
+  }
+
+```
 
 ## Unions
