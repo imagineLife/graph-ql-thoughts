@@ -22,6 +22,15 @@
   - MOST mutations (create,delete,update)...have arguments to infor the work on which fields are being worked on
 - create resolvers for mutation fields
 
+## What do mutations return
+
+- whatever the devs want!
+- perhaps ALWAYS return the item mutated
+  - deleted items can even return the deleted item id
+  - **sensitive to client-side graphql logic**
+    - client-side logic is cached, so the cache needs to be updated no matter what
+- returning the thing can reduce another needed query to get the updated data anyway!
+
 ## Trivial eample
 
 - NOTE
