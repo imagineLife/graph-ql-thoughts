@@ -1,5 +1,7 @@
 ## Resolvers
 
+[Interesting Article](https://v1.prisma.io/tutorials/a-guide-to-common-resolver-patterns-ct08)
+
 GraphQL Will look at the 'parent' resolver
 
 - GraphQL builds a resolver for every field, perhpas an "under the hood" type thing
