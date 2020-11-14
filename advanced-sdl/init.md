@@ -192,3 +192,31 @@ type Query {
     - linkable to other "nodes"
   - allows clients to ask for "nodes"
   - allows clients to "follow links" to get related "nodes"
+  - Example
+    - users have shoes
+    - shoes can belong to users
+    - **db doesnt have to have the relationship**
+      - this can be virtualized
+
+### How to add relationships
+
+- adda type as a field value on another type
+- create resolvers for fileds on the type
+
+### Trivial example
+
+```js
+// put Shoe as a relationship to a user type defs
+type User {
+  email: String!
+  imgUrl: String
+  shoes: [Shoe]!
+}
+
+// put User as a relationship to a Shoe type defs
+interface Shoe {
+ brand: String!
+ size: Int!
+ user: User!
+}
+```
