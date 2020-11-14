@@ -1,5 +1,9 @@
 # advanced Schema definition language
 
+- [Enums](#enums)
+- [Interfaces](#interfaces)
+- [Unions](#unions)
+
 ## Enums
 
 - set of discrete values
@@ -32,3 +36,26 @@ const typeDefs = gql`
   }
 `;
 ```
+
+### Querying from a client using enum
+
+```js
+/*
+  NOTICE
+  the enum is not a string, it looks like a var in js
+*/
+mutation {
+  newPet(input: {name: "Frank", type: HORSE}){
+    name
+    type
+  }
+}
+```
+
+## Interfaces
+
+- "Abstract Types" that CAN NOT be used as field values
+- used as "foundations" for explicit types
+  - i.e when types share common fields, bu differ slightly
+
+## Unions
