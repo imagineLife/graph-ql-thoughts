@@ -131,3 +131,8 @@ TopWear{
   - in order to make clear all fields during development, perhaps, all fields need to be present EVENT WHEN leveraging interfaces
 
 ## Unions
+
+- similar to interfaces
+  - without ANY common fields amongst the types
+- good for accessing more-than-one type using one query
+  - i.e a 'global search'
