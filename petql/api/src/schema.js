@@ -32,6 +32,15 @@ const typeDefs = gql`
     pet(input: PetInput): Pet
     petsByType(input: PetByTypeInput): [Pet]
   }
+
+  input NewPetType{
+    name: String!
+    type: String!
+  }
+
+  type Mutation {
+    newPet(input: NewPetType): Pet
+  }
 `;
 
 /*
@@ -40,12 +49,7 @@ const typeDefs = gql`
     - coordinates with the resolvers file
 
   input PetInput
-    - different than a type
+    - different than a type, key-word `input` declares an INPUT type
     - STILL a 'type' definition
-    - ONLY used for reference in 
-
-
-
-
 */ 
 module.exports = typeDefs
