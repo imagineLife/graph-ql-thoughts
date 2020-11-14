@@ -50,3 +50,35 @@ Resolvers Can resolve / return...
   - ...etc
 
 This is similar to a type-cast setup
+
+### Resolvers, DB Fields, and flexibility
+
+- Type-Cast the (db fields | fields to be returned)
+- no need to "account for" all the different ways that the client requests data...
+  - no "light-weigh user" and "robust user"
+  - let the type-system AND the query methods do the work...
+
+GraphQL letting the client query do the dynamic work of 'customizing' api responses...
+
+```js
+Query{
+  person{
+    id
+    name
+    age
+  }
+}
+```
+
+```js
+Query{
+  person{
+    id
+    name
+    age
+    address
+    gender
+    job title
+  }
+}
+```
