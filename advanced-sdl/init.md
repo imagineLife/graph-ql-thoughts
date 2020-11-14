@@ -136,3 +136,38 @@ TopWear{
   - without ANY common fields amongst the types
 - good for accessing more-than-one type using one query
   - i.e a 'global search'
+
+### trivial example
+
+```js
+// update type defs to include this union
+union DailyUpperwear = Shirt | Jacket
+
+// update the query definition in the resolvers
+// note, DailyupperwearInput type not explicit, just for p.o.c here
+type Query {
+  (..existing queries)
+  dailyupperwear(input: DailyupperwearInput!): DailyUpperwear
+}
+
+```
+
+### Querying from client
+
+```js
+// NOTE: similar to interfaces, NO common fields though
+{
+  dailyupperwear{
+    ... on Jacket {
+      material
+      weight
+      size
+    }
+    ... on Shirt {
+      material
+      size
+      sleeveLength
+    }
+  }
+}
+```
