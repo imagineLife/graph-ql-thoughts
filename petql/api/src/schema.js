@@ -13,8 +13,8 @@ const typeDefs = gql`
     createdAt: String!
     name: String!
     type: String!
-    hair: String!
-    color: String!
+    hair: String
+    color: String
   }
 
   input PetInput{
@@ -39,7 +39,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    newPet(input: NewPetType): Pet
+    newPet(input: NewPetType!): Pet!
   }
 `;
 

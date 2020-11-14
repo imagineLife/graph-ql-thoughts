@@ -67,19 +67,12 @@ module.exports = {
       return myPets.filter(p => p.type === petType)
     }
   },
-  // Mutation: {
-    
-  // },
-  // Pet: {
-  //   img(pet) {
-  //     return pet.type === 'DOG'
-  //       ? 'https://placedog.net/300/300'
-  //       : 'http://placekitten.com/300/300'
-  //   }
-  // },
-  // User: {
-    
-  // }
+
+  Mutation:{
+    newPet(_, {input}){
+      return input
+    }
+  }
 }
 
 /*
