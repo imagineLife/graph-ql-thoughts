@@ -29,6 +29,7 @@ https://github.com/FrontendMasters/fullstack-graphql
   - similar to a 'controller' in a rest api
   - **job is to fetch the data**
 - Query Defs
+  - define a 'query'
 - Mutation Defs
   - ask api for data or modify data
 - composition
@@ -60,3 +61,29 @@ https://github.com/FrontendMasters/fullstack-graphql
 
 - GraphQL Server Creates Nodes
 - Client request matches queryAPI resolver assumptions
+
+## Trivial Overview
+
+### Setting up an apollo server
+
+(_Apollo Server is an open-source, spec-compliant GraphQL server that's compatible with any GraphQL client, including Apollo Client. It's the best way to build a production-ready, self-documenting GraphQL API that can use data from any source._ [Docs](https://www.apollographql.com/docs/apollo-server/))
+
+```js
+const { ApolloServer } = require("apollo-server");
+const typeDefs = require("./schema");
+const resolvers = require("./resolvers");
+const { models, db } = require("./db");
+const PORT = process.env.PORT || 4000;
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context() {
+    return { models, db };
+  },
+});
+
+server.listen().then(({ url }) => {
+  console.log(`🚀 Server ready at ${url}`);
+});
+```
