@@ -175,6 +175,8 @@ type Query {
 
 ## Relationships
 
+**this is the "graph" in GraphQL**
+
 - in DB there are no relationships
 - POWERFUL
 - DANGEROUS
