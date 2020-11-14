@@ -63,6 +63,8 @@ mutation {
 
 ### Trivial Example
 
+## updating the types to accommodate an interface
+
 ```js
 
   // an enum
@@ -95,6 +97,34 @@ mutation {
     weight: JacketWeight
   }
 
+```
+
+### adjust resolvers to accommodate the connection
+
+```js
+TopWear{
+  __resolveType(clienttopwear){
+    if(clienttopwear.weight) return 'Jacket'
+    return 'Shirt'
+  }
+}
+```
+
+### Querying from client
+
+```js
+{
+  topwears{
+    size
+    material
+    ... on Jacket {
+      weight
+    }
+    ... on Shirt {
+      sleeveLength
+    }
+  }
+}
 ```
 
 ## Unions
