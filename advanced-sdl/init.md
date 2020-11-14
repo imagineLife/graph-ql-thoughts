@@ -127,4 +127,7 @@ TopWear{
 }
 ```
 
+- repetitious, perhaps, for explicit reasons
+  - in order to make clear all fields during development, perhaps, all fields need to be present EVENT WHEN leveraging interfaces
+
 ## Unions
