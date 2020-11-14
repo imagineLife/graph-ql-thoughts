@@ -4,7 +4,7 @@ https://github.com/FrontendMasters/fullstack-graphql
 
 # What is GraphQL
 
-Interpreted from scott moss...
+(_Interpreted from scott moss_)
 
 - a spec
   - http://spec.graphql.org
