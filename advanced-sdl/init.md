@@ -11,9 +11,24 @@
 
 Enums go in the `typeDefs`
 
-### Triial Example
+### Trivial Example
 
-const typeDefs = gql` enum PetType { CAT DOG HORSE GIRAFFE }`
-**Notes**
-
-- by default, the response from the api with the above enum values will return the same string: HORSE (_looks like a variable_) will return "HORSE" as a string
+```js
+/*
+  - `PetType` is declaring the enum options for the PetType val
+  - `PetType` is leveraged as the `brand` value in the `Pet` `type` field value
+*/
+const typeDefs = gql`
+  enum PetType {
+    CAT
+    DOG
+    HORSE
+    GIRAFFE
+  }
+  type Pet {
+    type: PetType!
+    age: Int!
+    color: String!
+  }
+`;
+```
