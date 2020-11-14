@@ -60,8 +60,8 @@ module.exports = {
     return [{id:1, name: 'init'}, {id: 2, name: 'hank'}] 
     },
     pet(_,{input},ctx){
-      // return myPets.filter(p => p.name === input.name)[0]
-      return ctx.models.Pet.findOne(input)
+      return myPets.filter(p => p.name === input.name)[0]
+      // return ctx.models.Pet.findOne(input)
     },
     petsByType(_,{input:{petType}},ctx){
       return myPets.filter(p => p.type === petType)
