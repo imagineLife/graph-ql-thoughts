@@ -19,6 +19,10 @@ const myPets = [
 
 module.exports = {
   Query: {
+      // user(_,__,ctx){
+      //   return { id: 1, username: 'walter' }
+      // },
+
     // pets(_,__, ctx, info){
       pets(_,{input}, ctx, info){
     /* 
