@@ -65,7 +65,7 @@ module.exports = {
     },
     pet(_,{input},ctx){
       // return myPets.filter(p => p.name === input.name)[0]
-      return ctx.models.Pet.findMany(input);
+      return ctx.models.Pet.findOne(input);
       // return ctx.models.Pet.findOne(input)
     },
     petsByType(_,{input:{petType}},ctx){
@@ -83,6 +83,11 @@ module.exports = {
     owner(pet, _, {models}) {
       console.log('Pet -> Owner');
       return models.User.findOne() // could pass a param here{id: pet.owner}
+    }
+  },
+  User: {
+    pets(user, __, ctx){
+      return ctx.models.Pet.findMany()
     }
   }
 }
@@ -104,5 +109,15 @@ module.exports = {
     }
   }
 
+  // pet with relational connection to owner
+  {
+    pet {
+      id
+      name
+      owner {
+        username
+      }
+    }
+  }
   
 */
