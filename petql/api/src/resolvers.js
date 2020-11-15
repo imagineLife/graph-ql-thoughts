@@ -80,8 +80,19 @@ module.exports = {
       
       return thisPet
     }
+  },
+  Pet: {
+    owner(pet, _, {models}) {
+      console.log('Pet -> Owner');
+      return models.User.findOne() // could pass a param here{id: pet.owner}
+    }
   }
 }
+
+/*
+  Pet -> owner is a field-level resolver
+    a resolver for a field on a type that is NOT a mutaiton OR query
+*/ 
 
 /*
   queries that work
