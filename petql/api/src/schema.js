@@ -1,11 +1,14 @@
 const { gql } = require('apollo-server')
 /**
  * Type Definitions for our Schema using the SDL.
+
+ User -> pets && Pet -> User are expressions of "relationships", abstract types
  */
 const typeDefs = gql`
   type User {
     id: ID!
     username: String!
+    pets: [Pet]!
   }
 
   type Pet {
@@ -15,12 +18,17 @@ const typeDefs = gql`
     type: String!
     hair: String
     color: String
+    owner: User!
   }
 
   input PetInput{
     name: String
     type: String
     hair: String
+  }
+
+  input UserInput{
+    username: String
   }
 
   input PetByTypeInput{
@@ -31,6 +39,7 @@ const typeDefs = gql`
     pets(input: PetInput): [Pet]!
     pet(input: PetInput): Pet
     petsByType(input: PetByTypeInput): [Pet]
+    user(input: UserInput): User!
   }
 
   input NewPetType{
