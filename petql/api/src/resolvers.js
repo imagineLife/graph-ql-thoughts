@@ -75,9 +75,6 @@ module.exports = {
   Mutation:{
     newPet(_, {input}, ctx){
       const thisPet = ctx.models.Pet.create(input)
-      console.log('thisPet')
-      console.log(thisPet)
-      
       return thisPet
     }
   },
